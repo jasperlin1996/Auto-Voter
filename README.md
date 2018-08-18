@@ -1,5 +1,5 @@
 # Auto-Voter
-Auto-Voter is a bot that can help you support your favorite team but also save your precious time .
+Auto-Voter is a bot that can help you support your favorite team but also save your precious time.
 
 version info
 =============
