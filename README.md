@@ -16,7 +16,7 @@ Using tutorial
 4. Go to sleep.
 
 *   I highly recommend to click the "Stop Voting" button first if you want to exit the program. 
-
-*   Notice that if there were any ERROR occur, it will close the CLI and the ChromeDriver automatically.
+*   Notice that if any ERROR occur, the CLI and the ChromeDriver will be closed automatically.
+*   If you find that your contribution number stuck for a long time, just restart this program or click the start button again.
 
 You can also find the ChromeDriver file at http://chromedriver.chromium.org/downloads .

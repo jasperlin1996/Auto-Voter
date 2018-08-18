@@ -16,6 +16,7 @@ url = "http://www.trendingmusicawards.com/2018/06/best-fan-army.html"
 
 driver = None
 isDone = 0
+counter = 0
 statusText = tk.StringVar()
 statusColor = tk.StringVar()
 def doSomeShit():
@@ -23,13 +24,12 @@ def doSomeShit():
         options = webdriver.ChromeOptions()
         #options.add_argument("--headless")
 
-        global driver, isDone, statusText, statusColor
+        global driver, isDone, statusText, statusColor, counter
         statusText.set('Status: Auto voting...')
         statusColor.set('green')
         tk.Label(textvariable = statusText, fg = statusColor.get()).place(x = 100, y = 180)
         poll = 0
         isDone = 0
-        counter = 0
         driver = webdriver.Chrome(executable_path = os.getcwd()+"\\chromedriver.exe", chrome_options = options)
         driver.set_window_position(-10000,0)
         driver.get(url)
@@ -58,7 +58,7 @@ def doSomeShit():
         driver.quit()
     except Exception as e:
         driver.quit()
-        sys.exit("sorry, goodbye!")
+        exit()
 
 def updateData(uVeVoted, totalVotes):
     global driver
