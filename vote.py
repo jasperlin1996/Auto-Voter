@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selenium.common.exceptions import *
 import os
 import sys
 import time
@@ -38,7 +38,13 @@ def doSomeShit():
             driver.find_element_by_xpath('//*[@id="PDI_answer46248899"]').click()
             driver.find_element_by_xpath('//*[@id="pd-vote-button10078773"]').click()
             time.sleep(1)
-            temp = int(driver.find_element_by_xpath('//*[@id="PDI_container10078773"]/div/div/div/div/div[2]/div[3]/span').text.replace(",",""))
+            try:
+                temp = int(driver.find_element_by_xpath('//*[@id="PDI_container10078773"]/div/div/div/div/div[2]/div[3]/span').text.replace(",",""))
+            except Exception as e:
+                if type(e) == NoSuchElementException:
+                    print(e)
+                    time.sleep(1)
+                    temp = int(driver.find_element_by_xpath('//*[@id="PDI_container10078773"]/div/div/div/div/div[2]/div[3]/span').text.replace(",",""))
             if poll < temp:
                 counter+=1
                 poll = temp
@@ -50,7 +56,7 @@ def doSomeShit():
         statusColor.set('red')
         tk.Label(textvariable = statusText, fg = statusColor.get()).place(x = 100, y = 180)
         driver.quit()
-    except:
+    except Exception as e:
         driver.quit()
         sys.exit("sorry, goodbye!")
 
