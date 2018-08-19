@@ -1,7 +1,7 @@
 # Auto-Voter
 Auto-Voter is a bot that can help you support your favorite team and also save your precious time.
 
-version info
+Version info
 =============
 *   v0.2
 *   Python 3.6.2
